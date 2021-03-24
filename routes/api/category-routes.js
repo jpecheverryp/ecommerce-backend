@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
-    const updatedCategory = await Category.findByPk(req.params.id)
+    const updatedCategory = await Category.findByPk(req.params.id);
     updatedCategory.category_name = req.body.category_name;
     await updatedCategory.save();
     res.status(200).json(updatedCategory);
